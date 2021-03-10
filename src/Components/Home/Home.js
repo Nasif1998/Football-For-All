@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div>
             <div className="top-banner">
-              <h1 style={{textAlign: 'center', color: 'red', top: '30%', lineHeight: '200px'}}>FootballMania</h1>
+              <h1 style={{textAlign: 'center', color: 'rgb(236, 209, 140)', top: '30%', lineHeight: '200px'}}>Football For All</h1>
             </div>
             <div className="home-design">
             <Container>
