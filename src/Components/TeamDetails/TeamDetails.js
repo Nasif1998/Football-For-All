@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faFlagCheckered, faFutbol, faMale, faRunning } from '@fortawesome/free-solid-svg-icons'
+import { faCampground, faFlagCheckered, faFutbol, faRunning, faVenusMars } from '@fortawesome/free-solid-svg-icons'
 import './TeamDetails.css'
 import malepic from '../Photo/male.png'
 import femalepic from '../Photo/female.png'
 import { faFacebookF, faTwitterSquare, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { Col, Container, Row } from 'react-bootstrap';
+import "bootstrap/dist/css/bootstrap.css";
 
 const TeamDetails = () => {
     let { idTeam } = useParams();
@@ -18,12 +20,14 @@ const TeamDetails = () => {
             .then(data => setTeam(data.teams[0]))
     }, [idTeam])
 
-    const { strTeam, intFormedYear, strSport, strGender, strTeamBadge } = team;
+    const { strTeam, intFormedYear, strSport, strGender, strTeamBadge, strCountry } = team;
 
     // let genderObservation;
     // if(strGender === 'Male'){
     //     genderObservation = <img style={{ height: '200px', width: '300px', float: 'right', marginRight: '20px', marginTop: '20px', marginBottom: '20px' }} src={malepic} alt="" />
     // }
+    // const isBigScreen = useMediaQuery({ query: '(min-width: 1224px)' })
+    // const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
     return (
         <div>
             <div className="second-banner">
@@ -31,21 +35,39 @@ const TeamDetails = () => {
             </div>
             <div style={{ backgroundColor: 'darkslateblue' }}>
                 <div className="team-details">
-                    <div style={{ float: 'left', marginLeft: '20px', marginTop: '20px' }}>
+                    {/* <div style={{ float: 'left', marginLeft: '20px', marginTop: '20px' }}>
                         <h1><FontAwesomeIcon icon={faFutbol} /> {strTeam}</h1>
                         <p> <FontAwesomeIcon icon={faFlagCheckered} /> Founded: {intFormedYear}</p>
                         <p> <FontAwesomeIcon icon={faRunning} /> Sport type: {strSport}</p>
                         <p> <FontAwesomeIcon icon={faMale} /> Gender: {strGender}</p>
                     </div>
-                    <div>
-                        {/* <img style={{ height: '200px', width: '300px', float: 'right', marginRight: '20px', marginTop: '20px', marginBottom: '20px' }} src={malepic} alt="" /> */}
+                   <div>
                         {
                             strGender === 'Male' ? <img style={{ height: '200px', width: '300px', float: 'right', marginRight: '20px', marginTop: '20px', marginBottom: '20px' }} src={malepic} alt="" /> : null
                         }
                         {
                             strGender === 'Female' ? <img style={{ height: '200px', width: '300px', float: 'right', marginRight: '20px', marginTop: '20px', marginBottom: '20px' }} src={femalepic} alt="" /> : null
                         }
-                    </div>
+                    </div> */}
+                    <Container>
+                        <Row>
+                            <Col style={{marginTop: '25px'}} xs={12} md={6}>
+                                <h1><FontAwesomeIcon icon={faFutbol} /> {strTeam}</h1>
+                                <p> <FontAwesomeIcon icon={faCampground} /> Founded: {intFormedYear}</p>
+                                <p> <FontAwesomeIcon icon={faFlagCheckered} /> Country: {strCountry}</p>
+                                <p> <FontAwesomeIcon icon={faRunning} /> Sport type: {strSport}</p>
+                                <p> <FontAwesomeIcon icon={faVenusMars} /> Gender: {strGender}</p>
+                            </Col>
+                            <Col xs={12} md={6}>
+                                {
+                                    strGender === 'Male' ? <img style={{ height: '200px', width: '350px', float: 'right', marginTop: '20px', marginBottom: '20px' }} src={malepic} alt="" /> : null
+                                }
+                                {
+                                    strGender === 'Female' ? <img style={{ height: '200px', width: '300px', float: 'right', marginTop: '20px', marginBottom: '20px' }} src={femalepic} alt="" /> : null
+                                }
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
 
                 <div className="details">
@@ -53,10 +75,10 @@ const TeamDetails = () => {
 
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, est reiciendis dolor pariatur iure non impedit accusamus repellendus in, labore nihil consequuntur commodi itaque iste ut quae nesciunt, voluptatum nulla minima architecto inventore voluptas. Magni sit beatae quas dicta labore aliquam architecto. Mollitia culpa dolorum dignissimos, necessitatibus, sed aliquam nam similique asperiores eligendi enim totam corporis. Architecto, quam aut maxime quis aliquid aspernatur fugiat nihil sapiente optio et id, laboriosam exercitationem sit amet. Impedit, reprehenderit eos dolores numquam cumque error quisquam adipisci provident corrupti odio sequi consequatur saepe asperiores quas est! Veritatis fugit voluptatum adipisci? Dolores voluptatibus amet odio quaerat odit sint, veniam repellendus incidunt mollitia unde in distinctio adipisci maiores nesciunt doloribus aut, necessitatibus expedita est aliquam vitae a quis. Cupiditate suscipit labore vero veniam aspernatur consectetur at, omnis quidem dolorum reiciendis iste nesciunt fugit soluta. Ducimus hic nemo impedit labore animi eum quia velit voluptas. Exercitationem explicabo itaque consectetur rem iste? Quae atque inventore quam voluptatum omnis ea dolor, deleniti ipsa? Labore ipsam necessitatibus fugit voluptates error optio aliquam nobis hic velit modi ratione, iusto iste incidunt minima ipsum, id natus delectus sed eius totam corporis laborum? Laborum neque assumenda ipsum quod harum! Quo molestiae suscipit quisquam distinctio!</p>
                 </div>
-                <div>
+                <div className="icon-container">
                     <a className="icon-size" style={{ left: '45%', position: 'absolute' }} href="https://twitter.com/"><FontAwesomeIcon icon={faTwitterSquare} /></a>
                     <a className="icon-size" style={{ left: '50%', position: 'absolute' }} href="https://www.facebook.com/"><FontAwesomeIcon icon={faFacebookF} /></a>
-                    <a className="icon-size" style={{left: '55%', position: 'absolute'}} href="https://www.youtube.com/"><FontAwesomeIcon icon={faYoutube} /></a>
+                    <a className="icon-size" style={{ left: '55%', position: 'absolute' }} href="https://www.youtube.com/"><FontAwesomeIcon icon={faYoutube} /></a>
                 </div>
             </div>
         </div>
