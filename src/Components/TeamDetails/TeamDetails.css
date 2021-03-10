@@ -1,0 +1,22 @@
+.second-banner{
+    background-image: url('../Photo/league.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 250px;
+}
+.team-details{
+    display: inline-block;
+    width: 90%;
+    border: 1px solid red;
+    background-color: darkturquoise;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.details{
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 20px;
+}
