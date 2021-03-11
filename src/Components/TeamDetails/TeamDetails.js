@@ -22,12 +22,7 @@ const TeamDetails = () => {
 
     const { strTeam, intFormedYear, strSport, strGender, strTeamBadge, strCountry } = team;
 
-    // let genderObservation;
-    // if(strGender === 'Male'){
-    //     genderObservation = <img style={{ height: '200px', width: '300px', float: 'right', marginRight: '20px', marginTop: '20px', marginBottom: '20px' }} src={malepic} alt="" />
-    // }
-    // const isBigScreen = useMediaQuery({ query: '(min-width: 1224px)' })
-    // const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    
     return (
         <div>
             <div className="second-banner">
@@ -35,20 +30,6 @@ const TeamDetails = () => {
             </div>
             <div style={{ backgroundColor: 'darkslateblue' }}>
                 <div className="team-details">
-                    {/* <div style={{ float: 'left', marginLeft: '20px', marginTop: '20px' }}>
-                        <h1><FontAwesomeIcon icon={faFutbol} /> {strTeam}</h1>
-                        <p> <FontAwesomeIcon icon={faFlagCheckered} /> Founded: {intFormedYear}</p>
-                        <p> <FontAwesomeIcon icon={faRunning} /> Sport type: {strSport}</p>
-                        <p> <FontAwesomeIcon icon={faMale} /> Gender: {strGender}</p>
-                    </div>
-                   <div>
-                        {
-                            strGender === 'Male' ? <img style={{ height: '200px', width: '300px', float: 'right', marginRight: '20px', marginTop: '20px', marginBottom: '20px' }} src={malepic} alt="" /> : null
-                        }
-                        {
-                            strGender === 'Female' ? <img style={{ height: '200px', width: '300px', float: 'right', marginRight: '20px', marginTop: '20px', marginBottom: '20px' }} src={femalepic} alt="" /> : null
-                        }
-                    </div> */}
                     <Container>
                         <Row>
                             <Col style={{marginTop: '25px'}} xs={12} md={6}>
